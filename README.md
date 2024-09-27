@@ -45,7 +45,8 @@ Clone the repository:
 
     pip install -r requirements.txt
 
-### Set up the environment variables for configuration: Create a .env file and add the following values:
+### Set up the environment variables for configuration: 
+###  Create a .env file and add the following values:
     SECRET_KEY="<your_key>"
     API_KEY="<your_api_key>"
     TOKEN="<your_token>"
@@ -91,7 +92,7 @@ Funcionalidades
     Adicionar filmes à coleção pessoal (assistidos, favoritos, lista de desejos)
     Atualizar ou remover filmes da coleção
 
-Tecnologias Utilizadas
+# Tecnologias Utilizadas
 
     Flask: Microframework web para Python
     SQLAlchemy: ORM para interações com banco de dados
@@ -99,7 +100,7 @@ Tecnologias Utilizadas
     Bootstrap: Framework frontend para design responsivo
     Pytest: Framework de testes para Python
 
-Instruções de Configuração
+# Instruções de Configuração
 Pré-requisitos
 
     Python 3.x
@@ -119,7 +120,7 @@ Pré-requisitos
     source venv/bin/activate
 
 # Para Windows
-venv\Scripts\activate
+    venv\Scripts\activate
 
 ### Instale as dependências necessárias:
 
@@ -140,13 +141,13 @@ Crie um arquivo .env e adicione os seguintes valores:
 ###  Execute o aplicativo:
     flask run
 
-Executando os Testes
+# Executando os Testes
 
 ###  Para executar a suíte de testes usando pytest:
     pytest test.py
 
 Verifique se todos os testes passam antes da implantação ou do desenvolvimento adicional.
-Configuração do Docker (Opcional)
+## Configuração do Docker (Opcional):
 
 ### Construa a imagem Docker:
     docker build -t movie-collection-app .
