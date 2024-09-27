@@ -52,10 +52,7 @@ Clone the repository:
     TOKEN="<your_token>" -> The movie db Token
 
 ### Initialize the database:
-
-    flask db init
-    flask db migrate
-    flask db upgrade
+    python create_tables.py
 
 ### Run the application
     python run.py
@@ -134,10 +131,7 @@ Crie um arquivo .env e adicione os seguintes valores:
     API_KEY="<sua_chave_api>" -> Chava de API gerada no the movie db api
     TOKEN="<sua_token>" -> Token gerada no the movie db api
 ###  Inicialize o banco de dados:
-
-    flask db init
-    flask db migrate
-    flask db upgrade
+    python create_tables.py
 
 ###  Execute o aplicativo:
     python run.py
