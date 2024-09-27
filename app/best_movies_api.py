@@ -27,6 +27,7 @@ def search_movie_by_title(title, page=1):
         print(f"Error: {response.status_code} - {response.text}")
         return [], 0, 0 
 
+
 def get_movie_details(id):
     movie_url = f"{BASE_URL}/movie/{id}?language=en-US"
     headers = {
