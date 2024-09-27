@@ -84,7 +84,7 @@ Docker Setup (Optional)
 # Aplicativo de Coleção de Filmes
 
 Este projeto é um aplicativo web que permite aos usuários pesquisar filmes, ver detalhes sobre os filmes e gerenciar sua coleção pessoal de filmes (assistidos, favoritos, lista de desejos). Os usuários podem se registrar, fazer login e acompanhar suas preferências de filmes.
-Funcionalidades
+## Funcionalidades
 
     Registro e autenticação de usuários
     Pesquisa de filmes usando API externa
