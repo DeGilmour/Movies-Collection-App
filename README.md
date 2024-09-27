@@ -16,6 +16,7 @@ This project is a web application that allows users to search for movies, view d
     Flask-Login: Authentication and session management
     Bootstrap: Frontend framework for responsive design
     Pytest: Testing framework for Python
+    Api Used: https://developer.themoviedb.org/reference/intro/getting-started)
 ## Setup Instructions
 Prerequisites
 
@@ -46,9 +47,9 @@ Clone the repository:
 
 ### Set up the environment variables for configuration: 
 ###  Create a .env file and add the following values:
-    SECRET_KEY="<your_key>"
-    API_KEY="<your_api_key>"
-    TOKEN="<your_token>"
+    SECRET_KEY="<your_key>" -> Sql Lite key
+    API_KEY="<your_api_key>" -> The movie db API_KEY
+    TOKEN="<your_token>" -> The movie db Token
 
 ### Initialize the database:
 
@@ -98,6 +99,7 @@ Este projeto é um aplicativo web que permite aos usuários pesquisar filmes, ve
     Flask-Login: Autenticação e gerenciamento de sessões
     Bootstrap: Framework frontend para design responsivo
     Pytest: Framework de testes para Python
+    Api Usada: https://developer.themoviedb.org/reference/intro/getting-started)
 
 # Instruções de Configuração
 Pré-requisitos
@@ -128,9 +130,9 @@ Pré-requisitos
 ###  Configure as variáveis de ambiente para configuração: 
 Crie um arquivo .env e adicione os seguintes valores:
 
-    SECRET_KEY="<sua_chave>"
-    API_KEY="<sua_chave_api>"
-    TOKEN="<sua_token>"
+    SECRET_KEY="<sua_chave>" -> Chave do Db Sqlite
+    API_KEY="<sua_chave_api>" -> Chava de API gerada no the movie db api
+    TOKEN="<sua_token>" -> Token gerada no the movie db api
 ###  Inicialize o banco de dados:
 
     flask db init
