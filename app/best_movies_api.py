@@ -27,27 +27,6 @@ def search_movie_by_title(title, page=1):
         print(f"Error: {response.status_code} - {response.text}")
         return [], 0, 0 
 
-
-def get_movie_details(id):
-    # hurl = "https://api.themoviedb.org/3/movie/70829?language=en-US"
-    url = f"{BASE_URL}/movie/{id}?language=en-US"
-    headers = {
-        "accept": "application/json",
-        "Authorization": f"Bearer {TOKEN}"
-    }
-
-    response = requests.get(url, headers=headers)
-    
-    data = response.json()
-    
-    if response.status_code == 200:
-        data = response.json()
-        
-        return data
-    else:
-        print(f"Error: {response.status_code} - {response.text}")
-        return []
-    
 def get_movie_details(id):
     movie_url = f"{BASE_URL}/movie/{id}?language=en-US"
     headers = {
