@@ -1,0 +1,47 @@
+{% extends 'navbar.html' %}
+{% block content %}
+<body>
+    <div class="container mt-5">
+        <h1 class="mb-4">Search Results</h1>
+        <table class="table table-dark">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Poster</th>
+                    <th>Title</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for movie in movies %}
+                <tr>
+                    <td>
+                        <img src="https://image.tmdb.org/t/p/w500{{ movie.poster_path }}" 
+                             alt="{{ movie.title }} poster" 
+                             style="width: 100px; height: auto;">
+                    </td>
+                    <td>{{ movie.title }}</td>
+                    <td>
+                        <a href="{{ url_for('main.movie_detail', id=movie.id) }}" class="btn btn-info btn-sm">View Details</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <div class="pagination">
+            {% if page > 1 %}
+                <a href="{{ url_for('main.search', title=search_title, page=page - 1) }}" class="btn btn-secondary">Previous</a>
+            {% endif %}
+            {% for p in range(1, total_pages + 1) %}
+                <a href="{{ url_for('main.search', title=search_title, page=p) }}" class="btn btn-secondary {% if p == page %}active{% endif %}">{{ p }}</a>
+            {% endfor %}
+            {% if page < total_pages %}
+                <a href="{{ url_for('main.search', title=search_title, page=page + 1) }}" class="btn btn-secondary">Next</a>
+            {% endif %}
+        </div>
+
+        <a href="{{ url_for('main.index') }}" class="btn btn-secondary">Back to Dashboard</a>
+    </div>
+</body>
+</html>
+{% endblock %}

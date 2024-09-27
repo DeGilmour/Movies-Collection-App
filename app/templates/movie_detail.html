@@ -1,0 +1,56 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='details.css') }}">
+<div class="container">
+    <div class="cellphone-container">
+        <div class="movie">
+            <div class="menu"><i class="material-icons"></i></div>
+            <div class="movie-img" style="background-image: url('https://image.tmdb.org/t/p/w500{{ movie.poster_path }}');"></div>
+            <div class="text-movie-cont">
+                <div class="mr-grid">
+                    <div class="col1">
+                        <h1>{{ movie.title }}</h1>
+                        <ul class="movie-gen">
+                            <li>{{ movie.runtime }} min /</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="mr-grid summary-row">
+                    <div class="col2">
+                        <h5>SUMMARY</h5>
+                    </div>
+                </div>
+                <div class="mr-grid">
+                    <div class="col1">
+                        <p class="movie-description">{{ movie.overview }}</p>
+                    </div>
+                </div>
+                <div class="mr-grid actors-row">
+                    <div class="col1">
+                        <p class="movie-actors"> {{ movie.tagline }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <form action="{{ url_for('main.add_movie', id=movie.id) }}" method="POST" class="checkbox-form">
+        <label>
+            <input type="checkbox" name="watched" {% if user_movie and user_movie.watched %}checked{% endif %}>
+            Watched
+        </label>
+        <label>
+            <input type="checkbox" name="favorite" {% if user_movie and user_movie.favorite %}checked{% endif %}>
+            Favorite
+        </label>
+        <label>
+            <input type="checkbox" name="watchlist" {% if user_movie and user_movie.watchlist %}checked{% endif %}>
+            Watchlist
+        </label>
+        <button type="submit" class="btn">Save</button>
+    </form>
+   
+</div>
+
+
+{% endblock %}

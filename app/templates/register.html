@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='register.css') }}">
+</head>
+<body class="align">
+    <div class="grid">
+        <div class="container register">
+            <h2 class="text--center">Register</h2>
+            <form method="POST" action="{{ url_for('main.register') }}" class="form register">
+                {{ form.hidden_tag() }}
+
+                <div class="form__field">
+                    <label for="username" class="hidden">{{ form.username.label }}</label>
+                    {{ form.username(class='form__input', id='username', size=32, placeholder='Username') }}
+                </div>
+
+                <div class="form__field">
+                    <label for="email" class="hidden">{{ form.email.label }}</label>
+                    {{ form.email(class='form__input', id='email', size=32, placeholder='Email') }}
+                </div>
+
+                <div class="form__field">
+                    <label for="password" class="hidden">{{ form.password.label }}</label>
+                    {{ form.password(class='form__input', id='password', size=32, placeholder='Password') }}
+                </div>
+
+                <div class="form__field">
+                    <label for="confirm_password" class="hidden">{{ form.confirm_password.label }}</label>
+                    {{ form.confirm_password(class='form__input', id='confirm_password', size=32, placeholder='Confirm Password') }}
+                </div>
+
+                <div class="form__field">
+                    {{ form.submit(class='btn btn-primary', value='Register') }}
+                </div>
+            </form>
+            <p class="text--center">Already have an account? <a href="{{ url_for('main.login') }}">Register here</a>.</p>
+            {% with messages = get_flashed_messages() %}
+                {% if messages %}
+                    <ul class="flashes">
+                    {% for message in messages %}
+                        <li>{{ message }}</li>
+                    {% endfor %}
+                    </ul>
+                {% endif %}
+            {% endwith %}
+        </div>
+    </div>
+
+    <svg xmlns="http://www.w3.org/2000/svg" class="icons">
+        <symbol id="icon-arrow-right" viewBox="0 0 1792 1792">
+            <path d="M1600 960q0 54-37 91l-651 651q-39 37-91 37-51 0-90-37l-75-75q-38-38-38-91t38-91l293-293H245q-52 0-84.5-37.5T128 1024V896q0-53 32.5-90.5T245 768h704L656 474q-38-36-38-90t38-90l75-75q38-38 90-38 53 0 91 38l651 651q37 35 37 90z" />
+        </symbol>
+        <symbol id="icon-lock" viewBox="0 0 1792 1792">
+            <path d="M640 768h512V576q0-106-75-181t-181-75-181 75-75 181v192zm832 96v576q0 40-28 68t-68 28H416q-40 0-68-28t-28-68V864q0-40 28-68t68-28h32V576q0-184 132-316t316-132 316 132 132 316v192h32q40 0 68 28t28 68z" />
+        </symbol>
+        <symbol id="icon-user" viewBox="0 0 1792 1792">
+            <path d="M1280 1280q0 119-84.5 203.5T992 1568t-203.5-84.5T704 1280q0-121 82-203t203-82 203 82 84 203zm-400-320q0-125-85-210.5T896 640t-209.5 85T601 896q0 126 85 210t210 84 209-84 84-210z" />
+        </symbol>
+        <symbol id="icon-email" viewBox="0 0 1792 1792">
+            <path d="M1280 576q0 19-18 37l-464 400q-15 13-37 13-20 0-37-13L512 613q-18-18-18-37V320q0-20 18-37l464-400q15-13 37-13 20 0 37 13l464 400q18 17 18 37v256zM1280 768v384q0 20-18 37l-464 400q-15 13-37 13-20 0-37-13l-464-400q-18-17-18-37V768l448 373q12 10 27 10 15 0 27-10l448-373z" />
+        </symbol>
+    </svg>
+</body>
+</html>

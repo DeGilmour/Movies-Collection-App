@@ -1,0 +1,54 @@
+{% extends 'navbar.html' %}
+
+{% block content %}
+<div class="container">
+    <h1>Welcome, {{ current_user.username }}!</h1>
+    
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <ul class="flashes">
+                {% for message in messages %}
+                    <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    {% endwith %}
+    
+    <h2>Your Movies</h2>
+    <table class="table table-dark table-bordered">
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user_movie in movies %}
+            <tr>
+                <td>
+                    <a href="{{ url_for('main.movie_detail', id=user_movie.id) }}" class="movie-link">
+                        {% if user_movie.poster_path %}
+                            <img style="height: 15vh;" src="https://image.tmdb.org/t/p/w500{{ user_movie.poster_path }}" alt="{{ user_movie.title }} poster">
+                        {% endif %}
+                        {{ user_movie.title }}
+                    </a>
+                </td>
+                <td>
+                    <ul class="status-list">
+                        {% if user_movie.watched %}
+                            <li>Watched</li>
+                        {% endif %}
+                        {% if user_movie.favorite %}
+                            <li>Favorited</li>
+                        {% endif %}
+                        {% if user_movie.watchlist %}
+                            <li>Watchlist</li>
+                        {% endif %}
+                    </ul>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+{% endblock %}
