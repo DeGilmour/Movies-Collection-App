@@ -1,7 +1,7 @@
-Movie Collection App
+# Movie Collection App
 
 This project is a web application that allows users to search for movies, view detailed information, and manage their personal movie collection (e.g., watched, favorite, watchlist). Users can register, log in, and keep track of their movie preferences.
-Features
+## Features
 
     User registration and authentication
     Search for movies using an external API
@@ -9,15 +9,14 @@ Features
     Add movies to your personal collection (watched, favorite, watchlist)
     Update or remove movies from your collection
 
-Technologies Used
+## Technologies Used
 
     Flask: Micro web framework for Python
     SQLAlchemy: ORM for database interactions
     Flask-Login: Authentication and session management
     Bootstrap: Frontend framework for responsive design
     Pytest: Testing framework for Python
-
-Setup Instructions
+## Setup Instructions
 Prerequisites
 
     Python 3.x
@@ -58,7 +57,7 @@ Clone the repository:
     flask db upgrade
 
 ### Run the application
-    flask run
+    python run.py
 
 Running Tests
 
@@ -139,7 +138,7 @@ Crie um arquivo .env e adicione os seguintes valores:
     flask db upgrade
 
 ###  Execute o aplicativo:
-    flask run
+    python run.py
 
 # Executando os Testes
 
