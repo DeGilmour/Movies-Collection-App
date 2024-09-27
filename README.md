@@ -1,10 +1,10 @@
-# Movie Collection App
+Movie Collection App
 
-This project is a web application that allows users to search for movies, view movie details, and manage their personal movie collection (e.g., watched, favorite, watchlist). Users can register, log in, and keep track of their movie preferences.
+This project is a web application that allows users to search for movies, view detailed information, and manage their personal movie collection (e.g., watched, favorite, watchlist). Users can register, log in, and keep track of their movie preferences.
 Features
 
     User registration and authentication
-    Search for movies using external API
+    Search for movies using an external API
     View detailed information about movies
     Add movies to your personal collection (watched, favorite, watchlist)
     Update or remove movies from your collection
@@ -24,71 +24,59 @@ Prerequisites
     Flask
     Docker (optional, for containerization)
 
-Installation
+## Installation
 
-    Clone the repository:
+Clone the repository:
 
-    bash
+    cd <repository-directory>
 
-Create a virtual environment and activate it:
+### Create a virtual environment and activate it:
 
-bash
 
-python -m venv venv
-source venv/bin/activate  # For Linux/Mac
-venv\Scripts\activate     # For Windows
 
-Install the required dependencies:
+#### For Linux/Mac
+    python -m venv venv
+    source venv/bin/activate
 
-bash
+### For Windows
+    venv\Scripts\activate
 
-pip install -r requirements.txt
+### Install the required dependencies:
 
-Set up the environment variables for configuration: Create a .env file and add the following values:
+    pip install -r requirements.txt
 
-bash
+### Set up the environment variables for configuration: Create a .env file and add the following values:
+    SECRET_KEY="<your_key>"
+    API_KEY="<your_api_key>"
+    TOKEN="<your_token>"
 
-FLASK_APP=app
-FLASK_ENV=development
-SECRET_KEY=your_secret_key
+### Initialize the database:
 
-Initialize the database:
+    flask db init
+    flask db migrate
+    flask db upgrade
 
-bash
-
-flask db init
-flask db migrate
-flask db upgrade
-
-Run the application:
-
-bash
-
+### Run the application
     flask run
 
 Running Tests
 
-    Run the test suite using pytest:
+To run the test suite using pytest:
 
-    bash
+    pytest test.py
 
-    pytest
-
-    Ensure that the tests pass before deployment or further development.
 
 Docker Setup (Optional)
 
-    Build the Docker image:
+### Build the Docker image:
+    docker build -t movie-collection-app .
 
-    bash
-
-docker build -t movie-collection-app .
-
-Run the Docker container:
-
-bash
-
-    docker run -p 5000:5000 movie-collection-app
+### Run the Docker container:
+    docker run -p 5000:5000 \
+    -e SECRET_KEY="my_secret_key" \
+    -e API_KEY="my_api_key" \
+    -e TOKEN="my_token" \
+    movie-collection-app
 
 
 
@@ -118,68 +106,54 @@ Pré-requisitos
     Flask
     Docker (opcional, para containerização)
 
-Instalação
+## Instalação
 
-    Clone o repositório:
+#### Clone o repositório:
+    git clone <repository-url>
+    cd <repository-directory>
 
-    bash
+### Crie um ambiente virtual e ative-o:
 
-Crie um ambiente virtual e ative-o:
+# Para Linux/Mac
+    python -m venv venv
+    source venv/bin/activate
 
-bash
+# Para Windows
+venv\Scripts\activate
 
-python -m venv venv
-source venv/bin/activate  # Para Linux/Mac
-venv\Scripts\activate     # Para Windows
+### Instale as dependências necessárias:
 
-Instale as dependências necessárias:
+    pip install -r requirements.txt
 
-bash
+###  Configure as variáveis de ambiente para configuração: 
+Crie um arquivo .env e adicione os seguintes valores:
 
-pip install -r requirements.txt
+    SECRET_KEY="<sua_chave>"
+    API_KEY="<sua_chave_api>"
+    TOKEN="<sua_token>"
+###  Inicialize o banco de dados:
 
-Configure as variáveis de ambiente para configuração: Crie um arquivo .env e adicione os seguintes valores:
+    flask db init
+    flask db migrate
+    flask db upgrade
 
-bash
-
-FLASK_APP=app
-FLASK_ENV=development
-SECRET_KEY=sua_chave_secreta
-
-Inicialize o banco de dados:
-
-bash
-
-flask db init
-flask db migrate
-flask db upgrade
-
-Execute o aplicativo:
-
-bash
-
+###  Execute o aplicativo:
     flask run
 
 Executando os Testes
 
-    Execute a suíte de testes usando pytest:
+###  Para executar a suíte de testes usando pytest:
+    pytest test.py
 
-    bash
-
-    pytest
-
-    Verifique se os testes passam antes da implantação ou do desenvolvimento adicional.
-
+Verifique se todos os testes passam antes da implantação ou do desenvolvimento adicional.
 Configuração do Docker (Opcional)
 
-    Construa a imagem Docker:
+### Construa a imagem Docker:
+    docker build -t movie-collection-app .
 
-    bash
-
-docker build -t movie-collection-app .
-
-Execute o container Docker:
-
-bash
-
-docker run -p 5000:5000 movie-collection-app
+### Execute o container Docker
+    docker run -p 5000:5000 \
+    -e SECRET_KEY="my_secret_key" \
+    -e API_KEY="my_api_key" \
+    -e TOKEN="my_token" \
+    movie-collection-app
